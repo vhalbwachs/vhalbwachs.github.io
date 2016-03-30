@@ -1,0 +1,46 @@
+.calendar-row {
+  list-style: none;
+}
+
+.calendar-row.header {
+  text-align: center;
+}
+
+.calendar-cell {
+  float: left;
+  width: 12.5%;
+  height: 45px;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  padding: 5px;
+}
+
+.calendar-cell:first-of-type {
+  border-left: 1px solid black;
+}
+
+ul:last-of-type > .calendar-cell {
+  border-bottom: 1px solid black;
+}
+
+.calendar-cell.day {
+  height: 105px;
+}
+
+ul {
+  clear: both;
+}
+
+.month {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+.month > span {
+  font-size: xx-large;
+  padding: 15px;
+  width: 25%;
+  text-align: center;
+}

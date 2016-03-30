@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Angular Calendar</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js"></script>
+    <script src="/app.js" defer></script>
+    <link rel="stylesheet" href="/style.css" media="screen">
+  </head>
+  <body ng-app="calendar" ng-strict-di>
+    <div ng-controller="CalendarCtrl as calendar">
+      <div class="month">
+        <button ng-click="calendar.decrementMonth()">Previous</button>
+        <span ng-bind="calendar.firstDay.format('MMMM YYYY')"></span>
+        <button ng-click="calendar.incrementMonth()">Next</button>
+      </div>
+      <ul class="calendar-row header">
+        <li class="calendar-cell"
+          ng-repeat="day in ::calendar.dayNames track by $index"
+          ng-bind="::day">
+        </li>
+      </ul>
+      <ul class="calendar-row"
+        ng-repeat="calendarRow in calendar.calendarRows track by $index">
+        <li class="calendar-cell day"
+          ng-repeat="day in calendarRow track by $index">
+          <span ng-bind="day.format('DD')"></span>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
